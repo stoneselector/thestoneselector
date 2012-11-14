@@ -1,0 +1,53 @@
+<div id="toolbar">
+	<%= link_to 'Add Inventory', new_item_path, :class => 'actions', :id => 'new_item_btn'%>
+	<%= link_to 'Add Multiple Items', {:action => 'populate'}, :class => 'actions', :id => 'new_item_btn'%>
+	<%= link_to 'Delete All', {:action => 'delete_all'}, :class => 'actions', :id => 'new_item_btn'%>
+</div>
+<br />
+<% if @items.size == 0 %>
+	<h1 style="font-size:20px; text-align:center;">Table is Empty.</h1>
+<% else %>
+<div id="main_table">
+<table>
+  <tr>
+    <th>Color</th>
+    <th>Lot Number</th>
+    <th>Thickness</th>
+    <th>Location</th>
+    <th>Quantity</th>
+    <th>Status</th>
+    <th>Size</th>
+    <th>Slab #</th>
+    <th>Actions</th>
+  </tr>
+<% @items.each do |item| %>
+	<tr>
+    <td><%= item.color %></td>
+    <td><%= item.lot_number %></td>
+    <td><%= item.thickness %> cm</td>
+    <td><%= item.location %></td>
+    <td><%= item.quantity %></td>
+    <% if item.status %>
+	<td><span class="availability_status available_status"></span></td>
+	<% else %>
+	<td><span class="availability_status unavailable_status"></span></td>
+	<% end %>
+    <td><%= item.size %></td>
+    <td><%= item.slab_number %></td>
+    <td class="action_links">
+		<%= link_to 'View', item, :class => 'actions' %>
+		<%= link_to 'Edit', edit_item_path(item), :class => 'actions' %>
+		<%= link_to 'Delete', item, confirm: 'Are you sure?', method: :delete, :class => 'actions' %>
+	</td>
+  </tr>
+<% end %>
+</table>
+</div>
+<% end %>
+<div id="infoBox">
+	<span><%= image_tag("available-icon.png")%> <p><%= @available_item_count %></p>&nbsp;&nbsp;&nbsp;    
+		  <%= image_tag("unavailable-icon.png")%> <p><%= @unavailable_item_count %></p></span>
+</div>
+<div id="footer">
+	
+</div>

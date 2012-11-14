@@ -1,0 +1,72 @@
+<div id="update_table_container">
+	<div id="update_table_container_header"><h1>New Item</h1></div>
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<table id="new_item_table" border="0" cellspacing="4" cellpadding="0">
+<tr>
+  <div class="field">
+    <th><%= f.label :color, "Color:" %></th>
+    <td><%= f.text_field :color %></td>
+  </div>
+</tr>
+<tr> 
+ <div class="field">
+    <th><%= f.label :lot_number, "Lot Number:" %></th>
+    <td><%= f.number_field :lot_number %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <th><%= f.label :thickness, "Thickness:" %></th>
+    <td><%= f.text_field :thickness %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <th><%= f.label :location, "Location:" %></th>
+    <td><%= f.text_field :location %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <th><%= f.label :quantity, "Quantity:" %></th>
+    <td><%= f.number_field :quantity %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <th><%= f.label :status, "Available:" %></th>
+    <td><%= f.check_box :status %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <th><%= f.label :size, "Size:" %></th>
+    <td><%= f.text_field :size %></td>
+  </div>
+</tr>
+<tr>
+  <div class="field">
+    <th><%= f.label :slab_number, "Slab #:" %></th>
+    <td><%= f.text_field :slab_number %></td>
+  </div>
+</tr>
+<tr>
+  <div>
+	<td></td>
+    <td><%= f.submit "Submit Changes", :class => 'buttons' %></td>
+  </div>
+</tr>
+</table>
+<% end %>
+</div>

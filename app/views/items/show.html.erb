@@ -1,0 +1,45 @@
+<div id="toolbar">
+	<%= link_to 'Edit', edit_item_path(@item), :class => 'actions' %>
+	<%= link_to 'Back', items_path, :class => 'actions' %>
+</div>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Color:</b>
+  <%= @item.color %>
+</p>
+
+<p>
+  <b>Lot number:</b>
+  <%= @item.lot_number %>
+</p>
+
+<p>
+  <b>Thickness:</b>
+  <%= @item.thickness %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @item.location %>
+</p>
+
+<p>
+  <b>Quantity:</b>
+  <%= @item.quantity %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @item.status %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @item.size %>
+</p>
+
+<p>
+  <b>Slab number:</b>
+  <%= @item.slab_number %>
+</p>
