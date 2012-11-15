@@ -73,6 +73,7 @@ GEM
       httpauth (~> 0.1)
       multi_json (~> 1.0)
       rack (~> 1.4)
+    pg (0.13.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -138,6 +139,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql2
+  pg
   rails (= 3.2.5)
   roo
   sass-rails (~> 3.2.3)
