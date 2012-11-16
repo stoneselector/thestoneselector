@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items.json
   @@num_of_runs = 0
   def index
-    @items = Item.all
+    @items = Item.order("items.created_at DESC")
     @available_item_count = Item.where(:status => true).size
     @unavailable_item_count = Item.where(:status => false).size
     respond_to do |format|
